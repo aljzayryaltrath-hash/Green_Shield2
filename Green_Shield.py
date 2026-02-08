@@ -11,7 +11,7 @@ API_KEY = "41a2bc92a472f714126766c5920dd0eb"
 def main():
     os.system('clear')
     # شعار Green Shield بسيط وسريع
-    print(Fore.GREEN + "--- GREEN SHIELD v7.0 | AMAR DJAKJAKHA ---")
+    print(Fore.GREEN + "--- GREEN SHIELD v7.0 | djak.dz ---")
     print("\n1. 🛡️ فحص الأمان | 2. 📡 رادار المواقع | 3. 🚪 خروج")
     
     choice = input(Fore.YELLOW + "\nاختر المهمة: ")

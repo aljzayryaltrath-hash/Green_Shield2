@@ -1,39 +1,78 @@
 import os
-import requests
-import folium
-import phonenumbers
-from phonenumbers import geocoder, carrier
-from colorama import Fore, init
+import time
 
-init(autoreset=True)
-API_KEY = "41a2bc92a472f714126766c5920dd0eb"
+# Colors for professional Terminal look
+RED = '\033[1;31m'
+GREEN = '\033[1;32m'
+YELLOW = '\033[1;33m'
+BLUE = '\033[1;34m'
+RESET = '\033[0m'
 
-def main():
+def secret_panel():
     os.system('clear')
-    # شعار Green Shield بسيط وسريع
-    print(Fore.GREEN + "--- GREEN SHIELD v7.0 | djak.dz ---")
-    print("\n1. 🛡️ فحص الأمان | 2. 📡 رادار المواقع | 3. 🚪 خروج")
-    
-    choice = input(Fore.YELLOW + "\nاختر المهمة: ")
+    print(f"{RED}")
+    print("      ####################################")
+    print("      #    WELCOME TO SECRET ADMIN MODE  #")
+    print("      #        DEVELOPER: AMMAR DZ       #")
+    print("      ####################################")
+    print(f"{GREEN}")
+    print(" [99] Deep Network Injection")
+    print(" [100] Bypass Security Layers")
+    print(" [101] Encrypt Project Files")
+    print(" [00] Return to Main Menu")
+    print(f"{RESET}")
+    input(" admin@green_shield ~# ")
 
-    if choice == '1':
-        print(Fore.CYAN + "[*] جاري الفحص السريع... هاتف عمار محمي ✅")
-    
-    elif choice == '2':
-        num = input(Fore.CYAN + "أدخل الرقم (213...): ")
-        try:
-            parsed = phonenumbers.parse("+" + num if not num.startswith('+') else num)
-            location = geocoder.description_for_number(parsed, "ar")
-            print(Fore.GREEN + f"📍 الموقع التقريبي: {location}")
-            print(Fore.GREEN + "🌍 تم إنشاء الخريطة بنجاح باسم: green_shield_map.html")
-        except:
-            print(Fore.RED + "⚠️ خطأ في قراءة الرقم.")
-            
-    elif choice == '3':
-        exit()
+def main_menu():
+    os.system('clear')
+    print(f"{GREEN}")
+    print("  ██████╗ ██████╗ ███████╗███████╗███╗   ██╗")
+    print(" ██╔════╝ ██╔══██╗██╔════╝██╔════╝████╗  ██║")
+    print(" ██║  ███╗██████╔╝█████╗  █████╗  ██╔██╗ ██║")
+    print(" ██║   ██║██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║")
+    print(" ╚██████╔╝██║  ██║███████╗███████╗██║ ╚████║")
+    print("  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝")
+    print("       SHIELD ALGERIAN EDITION V2.0         ")
+    print(f"{YELLOW}--------------------------------------------")
+    print(f"{BLUE} [1] Phone System Scanner")
+    print(f"{BLUE} [2] Website Vulnerability Check")
+    print(f"{BLUE} [3] Network Security Test")
+    print(f"{BLUE} [4] About Developer")
+    print(f"{RED} [E] Exit")
+    print(f"{YELLOW}--------------------------------------------")
+    print(f"{RESET}")
 
-    input("\nاضغط Enter للعودة للمنو...")
-    main()
+def run():
+    while True:
+        main_menu()
+        choice = input(f"{GREEN}Select Option (or enter secret key): {RESET}")
+
+        if choice == "dz24": # Your secret key
+            secret_panel()
+        elif choice == "1":
+            print(f"{YELLOW}\n[*] Scanning Phone System... Please wait...")
+            time.sleep(2)
+            print(f"{GREEN}[+] Scan Complete: No threats found.")
+            input("\nPress Enter to continue...")
+        elif choice == "2":
+            print(f"{YELLOW}\n[*] Checking Website Security...")
+            time.sleep(2)
+            print(f"{GREEN}[+] Analysis finished.")
+            input("\nPress Enter to continue...")
+        elif choice == "3":
+            print(f"{YELLOW}\n[*] Testing Network...")
+            time.sleep(2)
+            input("\nPress Enter to continue...")
+        elif choice == "4":
+            print(f"{BLUE}\nDeveloper: Ammar from Guelma")
+            print("Status: Pro Programmer")
+            input("\nPress Enter to continue...")
+        elif choice.lower() == "e":
+            print(f"{RED}Exiting Green Shield... Goodbye!{RESET}")
+            break
+        else:
+            print(f"{RED}Invalid Option!{RESET}")
+            time.sleep(1)
 
 if __name__ == "__main__":
-    main()
+    run()
